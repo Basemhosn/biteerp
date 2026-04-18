@@ -1,0 +1,59 @@
+.wrap { padding: 0; }
+.topRow { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+.pageTitle { font-family: var(--font-display); font-size: 22px; color: var(--text-primary); margin-bottom: 4px; }
+.pageSub { font-size: 13px; color: var(--text-muted); max-width: 500px; }
+.weekPicker { display: flex; align-items: center; gap: 8px; }
+.weekLabel { font-size: 12px; color: var(--text-muted); }
+.dateInput { background: var(--bg-input); border: 0.5px solid var(--border); border-radius: var(--radius); color: var(--text-primary); font-size: 13px; padding: 7px 10px; outline: none; font-family: var(--font-body); cursor: pointer; }
+
+.summaryRow { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; margin-bottom: 1.25rem; }
+@media (max-width: 800px) { .summaryRow { grid-template-columns: repeat(3, 1fr); } }
+.summaryCard { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; display: flex; flex-direction: column; gap: 3px; }
+.summaryLabel { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+.summaryVal { font-family: var(--font-display); font-size: 18px; margin: 2px 0; }
+.summarySub { font-size: 11px; color: var(--text-muted); }
+
+.dayGrid { display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); gap: 8px; margin-bottom: 1.25rem; }
+@media (max-width: 900px) { .dayGrid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 500px) { .dayGrid { grid-template-columns: repeat(2, 1fr); } }
+
+.dayCard { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px; cursor: pointer; transition: border-color 0.15s; }
+.dayCard:hover { border-color: var(--border-focus); }
+.dayCard[data-selected='true'] { border-color: var(--accent); background: var(--bg-card); }
+.dayHeader { margin-bottom: 8px; }
+.dayName { font-size: 12px; font-weight: 500; color: var(--text-primary); display: block; }
+.dayNote { font-size: 10px; color: var(--text-muted); display: block; margin-top: 1px; line-height: 1.3; }
+
+.dayInputWrap { display: flex; align-items: center; background: var(--bg-input); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 8px; }
+.dayPre { font-size: 10px; color: var(--text-muted); padding: 0 5px; white-space: nowrap; }
+.dayInput { background: transparent; border: none; font-size: 13px; color: var(--text-primary); padding: 6px 4px; width: 100%; outline: none; font-family: var(--font-body); }
+
+.dayBarWrap { margin-bottom: 4px; }
+.dayBarTrack { height: 5px; background: var(--border); border-radius: 3px; position: relative; overflow: visible; }
+.dayBar { height: 100%; border-radius: 3px; transition: width 0.3s; }
+.targetLine { position: absolute; top: -3px; width: 2px; height: 11px; background: var(--accent); border-radius: 1px; transform: translateX(-50%); }
+
+.dayVs { font-size: 10px; font-weight: 500; margin-top: 4px; }
+.dayVs[data-positive='true']  { color: #5db88a; }
+.dayVs[data-positive='false'] { color: #d47060; }
+
+.catBreakdown { margin-top: 10px; padding-top: 10px; border-top: 0.5px solid var(--border); }
+.catTitle { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+.catRow { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 6px; }
+.catName { font-size: 10px; color: var(--text-secondary); flex: 1; }
+.catInputWrap { display: flex; align-items: center; background: var(--bg-input); border: 0.5px solid var(--border); border-radius: 4px; overflow: hidden; width: 80px; }
+.catPre { font-size: 9px; color: var(--text-muted); padding: 0 3px; }
+.catInput { background: transparent; border: none; font-size: 11px; color: var(--text-primary); padding: 4px 3px; width: 100%; outline: none; font-family: var(--font-body); }
+.catTotal { font-size: 11px; font-weight: 500; color: var(--accent); text-align: right; margin-top: 4px; }
+
+.chartCard { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; }
+.chartTitle { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+.chart { display: flex; align-items: flex-end; gap: 8px; height: 220px; padding-bottom: 24px; }
+.chartCol { display: flex; flex-direction: column; align-items: center; flex: 1; gap: 4px; height: 100%; justify-content: flex-end; }
+.chartVal { font-size: 10px; color: var(--text-secondary); text-align: center; min-height: 14px; }
+.chartBarWrap { position: relative; width: 100%; display: flex; align-items: flex-end; height: 180px; }
+.chartBar { width: 100%; border-radius: 4px 4px 0 0; transition: height 0.3s; }
+.chartTarget { position: absolute; left: 0; right: 0; height: 2px; background: var(--accent); opacity: 0.6; border-radius: 1px; }
+.chartDay { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+.chartLegend { display: flex; gap: 16px; margin-top: 12px; font-size: 11px; color: var(--text-muted); }
+.ldot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }

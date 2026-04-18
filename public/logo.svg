@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" width="200" height="44">
+  <style>
+    .wm-bite { fill: #ffffff; }
+    .wm-erp  { fill: #5EC4C8; }
+    .wm-dot  { fill: #5EC4C8; }
+    @media (prefers-color-scheme: light) {
+      .wm-bite { fill: #0d1f20; }
+      .wm-erp  { fill: #0D7377; }
+      .wm-dot  { fill: #0D7377; }
+    }
+  </style>
+  <text x="0" y="34" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="800" font-size="38" letter-spacing="-2" class="wm-bite">bite</text>
+  <circle cx="126" cy="16" r="6" class="wm-dot"/>
+  <text x="134" y="34" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="800" font-size="38" letter-spacing="-2" class="wm-erp">erp</text>
+</svg>

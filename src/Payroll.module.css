@@ -1,0 +1,45 @@
+.wrap { padding: 0; }
+.topRow { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.pageTitle { font-family: var(--font-display); font-size: 22px; color: var(--text-primary); margin-bottom: 4px; }
+.pageSub { font-size: 13px; color: var(--text-muted); }
+
+.summaryRow { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-bottom: 1.25rem; }
+@media (max-width: 900px) { .summaryRow { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 500px) { .summaryRow { grid-template-columns: 1fr 1fr; } }
+
+.summaryCard { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
+.summaryLabel { font-size: 10px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-muted); }
+.summaryVal { font-family: var(--font-display); font-size: 16px; }
+.summarySub { font-size: 10px; color: var(--text-muted); }
+
+.roleCard { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 12px; }
+.roleHeader { display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-bottom: 0.5px solid var(--border); flex-wrap: wrap; }
+.roleTitle { font-family: var(--font-display); font-size: 16px; color: var(--text-primary); flex: 1; }
+.roleHours { display: flex; align-items: center; gap: 6px; }
+.roleHoursLabel { font-size: 12px; color: var(--text-muted); }
+.hoursInput { width: 50px; background: var(--bg-input); border: 0.5px solid var(--border); border-radius: 6px; color: var(--text-primary); font-size: 13px; padding: 4px 8px; text-align: center; outline: none; font-family: var(--font-body); }
+.roleCount { font-size: 12px; color: var(--text-muted); }
+
+.roleTable { padding: 0; }
+.roleTableHead { display: grid; grid-template-columns: 1fr 160px 160px; padding: 7px 16px; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); border-bottom: 0.5px solid var(--border); }
+.roleTableRow { display: grid; grid-template-columns: 1fr 160px 160px; padding: 8px 16px; border-bottom: 0.5px solid var(--border); font-size: 13px; }
+.roleTableRow:last-child { border-bottom: none; }
+.roleTableRow span:last-child, .roleTableRow span:nth-child(2) { text-align: right; }
+.roleTableHead span:last-child, .roleTableHead span:nth-child(2) { text-align: right; }
+
+@media (max-width: 600px) {
+  .roleTableHead { grid-template-columns: 1fr 120px; }
+  .roleTableRow { grid-template-columns: 1fr 120px; }
+  .roleTableRow span:last-child { display: none; }
+  .roleTableHead span:last-child { display: none; }
+}
+
+.taxCard { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; }
+.taxTitle { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+.taxGrid { display: flex; flex-direction: column; gap: 12px; }
+.taxRow { display: grid; grid-template-columns: 220px 1fr; gap: 16px; align-items: center; }
+.taxLabel { font-size: 12px; color: var(--text-secondary); }
+.taxBars { display: flex; gap: 16px; }
+.taxBarItem { display: flex; flex-direction: column; gap: 2px; }
+.taxBarRole { font-size: 10px; color: var(--text-muted); }
+.taxBarAmt { font-size: 12px; font-weight: 500; color: var(--text-primary); }

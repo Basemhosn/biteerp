@@ -1,0 +1,62 @@
+.wrap { padding: 0; }
+
+.topRow { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.pageTitle { font-family: var(--font-display); font-size: 22px; color: var(--text-primary); margin-bottom: 4px; }
+.pageSub { font-size: 13px; color: var(--text-muted); }
+.resetBtn { font-family: var(--font-body); font-size: 12px; padding: 7px 14px; border: 0.5px solid var(--border); border-radius: var(--radius); background: transparent; color: var(--text-secondary); cursor: pointer; touch-action: manipulation; }
+.resetBtn:hover { background: var(--bg-surface); }
+
+.cardsRow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+@media (max-width: 800px) { .cardsRow { grid-template-columns: 1fr; } }
+
+.scenarioCard {
+  background: var(--bg-surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.25rem;
+  border-top: 2px solid var(--sc);
+}
+
+.scHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.scName {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+}
+.scDot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+.scInputs { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+.scField { display: flex; flex-direction: column; gap: 3px; }
+.scFieldLabel { font-size: 11px; color: var(--text-muted); }
+.scInputWrap { display: flex; align-items: center; background: var(--bg-input); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.scPre { font-size: 12px; color: var(--text-muted); padding: 0 6px; }
+.scInput { background: transparent !important; border: none !important; font-size: 13px; color: var(--text-primary); padding: 7px 8px 7px 2px !important; width: 100%; outline: none; }
+
+.scResults { border-top: 0.5px solid var(--border); padding-top: 12px; display: flex; flex-direction: column; gap: 7px; }
+.scResultRow { display: flex; justify-content: space-between; font-size: 13px; }
+.scResultRow span:first-child { color: var(--text-secondary); }
+.scResultRow span:last-child { font-weight: 500; }
+
+.compareTable { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.compareTitle { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 12px 16px 10px; border-bottom: 0.5px solid var(--border); }
+.compareGrid { padding: 8px 0; }
+.compareHeader { display: grid; grid-template-columns: 160px repeat(3, 1fr); gap: 0; padding: 6px 16px; margin-bottom: 4px; }
+.compareRow { display: grid; grid-template-columns: 160px repeat(3, 1fr); gap: 0; padding: 8px 16px; border-bottom: 0.5px solid var(--border); }
+.compareRow:last-child { border-bottom: none; }
+.compareMetricCol { font-size: 12px; color: var(--text-secondary); display: flex; align-items: center; }
+.compareHeader .compareMetricCol { font-size: 11px; font-weight: 500; color: var(--text-muted); }
+.compareHeader .compareScenarioCol { font-size: 12px; font-weight: 500; }
+.compareScenarioCol { display: flex; flex-direction: column; gap: 4px; padding: 0 8px; }
+.compareBarTrack { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.compareBar { height: 100%; border-radius: 2px; }
+.compareVal { font-size: 12px; font-weight: 500; }
+
+@media (max-width: 600px) {
+  .compareHeader, .compareRow { grid-template-columns: 120px repeat(3, 1fr); }
+  .compareMetricCol { font-size: 11px; }
+}

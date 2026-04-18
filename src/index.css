@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600&display=swap');
+
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f0e0d;
+  --bg-surface: #1a1917;
+  --bg-card: #1f1e1c;
+  --bg-input: #161514;
+  --border: rgba(255,255,255,0.08);
+  --border-focus: rgba(255,255,255,0.22);
+  --text-primary: #f0ede8;
+  --text-secondary: #9b9690;
+  --text-muted: #5e5b57;
+  --accent: #0D7377;
+  --accent-dim: rgba(13,115,119,0.12);
+  --green: #5db88a;
+  --green-dim: rgba(93,184,138,0.12);
+  --red: #d47060;
+  --red-dim: rgba(212,112,96,0.12);
+  --blue: #6a9fcb;
+  --blue-dim: rgba(106,159,203,0.12);
+  --radius: 10px;
+  --radius-lg: 14px;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+[data-theme='light'] {
+  --bg: #f0f4f4;
+  --bg-surface: #ffffff;
+  --bg-card: #e8efef;
+  --bg-input: #dce7e7;
+  --border: rgba(13,115,119,0.14);
+  --border-focus: rgba(13,115,119,0.4);
+  --text-primary: #0d1f20;
+  --text-secondary: #1e3d40;
+  --text-muted: #5a8285;
+  --accent: #0D7377;
+  --accent-dim: rgba(13,115,119,0.1);
+  --green: #1a7a50;
+  --green-dim: rgba(26,122,80,0.1);
+  --red: #c0392b;
+  --red-dim: rgba(192,57,43,0.1);
+  --blue: #1a6fa8;
+  --blue-dim: rgba(26,111,168,0.1);
+}
+
+html { font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+input[type=number], input[type=range], select {
+  font-family: var(--font-body);
+}
+
+input[type=number] {
+  background: var(--bg-input);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 14px;
+  padding: 9px 12px;
+  width: 100%;
+  transition: border-color 0.15s;
+  outline: none;
+}
+input[type=number]:focus { border-color: var(--border-focus); }
+input[type=number]::placeholder { color: var(--text-muted); }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+input[type=range]::-moz-range-thumb {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 2px solid var(--bg);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* ── Arabic / RTL support ────────────────────────────────── */
+[dir='rtl'] {
+  font-family: 'Noto Sans Arabic', 'DM Sans', system-ui, sans-serif;
+}
+
+/* Flip flex directions for RTL */
+[dir='rtl'] .topNav,
+[dir='rtl'] .topBarLeft,
+[dir='rtl'] .topBarRight {
+  flex-direction: row-reverse;
+}
+
+/* Arabic number formatting */
+[dir='rtl'] input[type='number'] {
+  text-align: right;
+}
+
+
+/* ═══════════════════════════════════════════════
+   PRINT STYLES — clean P&L and reports
+═══════════════════════════════════════════════ */
+@media print {
+  /* Hide all navigation and chrome */
+  header, nav,
+  [class*="topNav"],
+  [class*="subNav"],
+  [class*="thirdNav"],
+  [class*="sidebar"],
+  [class*="mobileTopbar"],
+  [class*="mobileOverlay"],
+  [class*="periodRow"],
+  [class*="exportRow"],
+  [class*="exportBtn"],
+  [class*="targetCard"],
+  [class*="catTargetsCard"],
+  [class*="kpiStrip"],
+  button:not([data-print="true"]) {
+    display: none !important;
+  }
+
+  /* Reset layout for print */
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+    font-family: 'DM Sans', Arial, sans-serif;
+  }
+
+  [class*="pageBody"],
+  [class*="main"],
+  [class*="layout"],
+  [class*="results"],
+  [class*="dash"],
+  [class*="wrap"] {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Make P&L breakdown table print cleanly */
+  [class*="breakdown"],
+  [class*="breakeven"],
+  [class*="metricCard"],
+  [class*="heroCard"] {
+    background: #fff !important;
+    border: 0.5pt solid #ccc !important;
+    color: #000 !important;
+    break-inside: avoid;
+  }
+
+  [class*="brow"],
+  [class*="wfRow"] {
+    border-bottom: 0.5pt solid #eee !important;
+    color: #000 !important;
+  }
+
+  /* Waterfall bars — show as text width in grayscale */
+  [class*="wfBar"] {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Hero grid — 3 per row on print */
+  [class*="heroGrid"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8pt !important;
+  }
+
+  /* Metrics grid */
+  [class*="metricsGrid"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8pt !important;
+  }
+
+  /* Page break utilities */
+  [class*="chartsRow"] {
+    break-before: page;
+  }
+
+  a { color: #000 !important; text-decoration: none !important; }
+
+  @page {
+    margin: 1.5cm;
+    size: A4 portrait;
+  }
+}
+
+/* Chatter hover actions */
+.msg-wrap:hover .msg-actions {
+  display: flex !important;
+}
+
+/* ── Language-specific fonts ────────────────────────────── */
+:root:lang(ar),
+html[lang='ar'] {
+  --font-body:    'Noto Sans Arabic', 'DM Sans', sans-serif;
+  --font-display: 'Noto Sans Arabic', Georgia, serif;
+  --font-mono:    'Noto Sans Arabic', monospace;
+}
+html[lang='hi'] {
+  --font-body:    'Noto Sans Devanagari', 'DM Sans', sans-serif;
+  --font-display: 'Noto Sans Devanagari', Georgia, serif;
+}
+
+/* ── RTL layout fixes ───────────────────────────────────── */
+[dir='rtl'] {
+  text-align: right;
+}
+[dir='rtl'] input,
+[dir='rtl'] textarea,
+[dir='rtl'] select {
+  text-align: right;
+  direction: rtl;
+}
+[dir='rtl'] .flex-row-reverse-rtl {
+  flex-direction: row-reverse;
+}
+/* Table cells */
+[dir='rtl'] th,
+[dir='rtl'] td {
+  text-align: right;
+}
+/* Padding flip for RTL */
+[dir='rtl'] [style*="padding-left"] {
+  padding-left: unset;
+}
+/* Nav arrow for RTL */
+[dir='rtl'] .arr-icon {
+  transform: scaleX(-1);
+}
+/* Borders flip in RTL */
+[dir='rtl'] [style*="border-left"] {
+  border-right: inherit;
+  border-left: none;
+}

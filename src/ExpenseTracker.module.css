@@ -1,0 +1,56 @@
+.wrap { padding: 0; }
+.topRow { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+.pageTitle { font-family: var(--font-display); font-size: 22px; color: var(--text-primary); margin-bottom: 4px; }
+.pageSub { font-size: 13px; color: var(--text-muted); max-width: 500px; }
+.addBtn { font-family: var(--font-body); font-size: 13px; padding: 8px 16px; background: var(--accent-dim); border: 0.5px solid var(--accent); border-radius: var(--radius); color: var(--accent); cursor: pointer; white-space: nowrap; }
+
+.summaryRow { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-bottom: 1.25rem; }
+@media (max-width: 700px) { .summaryRow { grid-template-columns: 1fr 1fr; } }
+.summaryCard { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; display: flex; flex-direction: column; gap: 3px; }
+.summaryLabel { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+.summaryVal { font-family: var(--font-display); font-size: 18px; margin: 2px 0; }
+.summarySub { font-size: 11px; color: var(--text-muted); }
+
+.formCard { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.25rem; }
+.formTitle { font-size: 13px; font-weight: 500; color: var(--text-primary); margin-bottom: 14px; }
+.formGrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+@media (max-width: 700px) { .formGrid { grid-template-columns: 1fr 1fr; } }
+.formField { display: flex; flex-direction: column; gap: 5px; }
+.formLabel { font-size: 11px; color: var(--text-muted); }
+.formInput { background: var(--bg-input); border: 0.5px solid var(--border); border-radius: var(--radius); color: var(--text-primary); font-size: 13px; padding: 8px 10px; outline: none; font-family: var(--font-body); width: 100%; transition: border-color 0.15s; }
+.formInput:focus { border-color: var(--border-focus); }
+.amtWrap { display: flex; align-items: center; background: var(--bg-input); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.amtPre { font-size: 12px; color: var(--text-muted); padding: 0 8px; white-space: nowrap; }
+.checkLabel { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-secondary); cursor: pointer; margin-top: 4px; }
+.formActions { display: flex; gap: 8px; }
+.saveBtn { font-family: var(--font-body); font-size: 13px; padding: 8px 18px; background: var(--accent-dim); border: 0.5px solid var(--accent); border-radius: var(--radius); color: var(--accent); cursor: pointer; }
+.cancelBtn { font-family: var(--font-body); font-size: 13px; padding: 8px 14px; background: transparent; border: 0.5px solid var(--border); border-radius: var(--radius); color: var(--text-muted); cursor: pointer; }
+
+.mainRow { display: grid; grid-template-columns: 1fr 260px; gap: 12px; align-items: start; }
+@media (max-width: 800px) { .mainRow { grid-template-columns: 1fr; } }
+
+.tableSection { display: flex; flex-direction: column; gap: 10px; }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; }
+.filterSelect { background: var(--bg-input); border: 0.5px solid var(--border); border-radius: var(--radius); color: var(--text-secondary); font-size: 12px; padding: 7px 10px; outline: none; font-family: var(--font-body); cursor: pointer; }
+
+.empty { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 32px; text-align: center; font-size: 13px; color: var(--text-muted); }
+
+.tableCard { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.tableScroll { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 560px; }
+.table th { padding: 8px 12px; text-align: left; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); border-bottom: 0.5px solid var(--border); }
+.table td { padding: 9px 12px; border-bottom: 0.5px solid var(--border); color: var(--text-secondary); vertical-align: middle; }
+.table tr:last-child td { border-bottom: none; }
+.catBadge { font-size: 11px; padding: 2px 7px; border-radius: 4px; background: var(--bg-input); color: var(--text-secondary); }
+.deleteBtn { font-size: 11px; padding: 3px 8px; border: 0.5px solid var(--border); border-radius: 4px; background: transparent; color: var(--text-muted); cursor: pointer; }
+.deleteBtn:hover { background: rgba(212,112,96,0.12); color: #d47060; border-color: #d47060; }
+.totalRow td { background: var(--bg-input) !important; }
+
+.breakdownCard { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; }
+.breakdownTitle { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+.breakdownRow { margin-bottom: 10px; }
+.breakdownCat { font-size: 11px; color: var(--text-secondary); display: block; margin-bottom: 4px; }
+.breakdownBarWrap { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 3px; }
+.breakdownBar { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.3s; opacity: 0.7; }
+.breakdownAmt { font-size: 11px; font-weight: 500; color: '#d47060'; }
+.breakdownTotal { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 0.5px solid var(--border); margin-top: 4px; font-size: 13px; color: var(--text-secondary); }

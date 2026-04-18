@@ -1,0 +1,52 @@
+.wrap { padding: 0; }
+.subTabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; }
+.subTab { font-family: var(--font-body); font-size: 13px; padding: 10px 18px; border: none; border-bottom: 2px solid transparent; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+.subTab:hover { color: var(--text-primary); }
+.subTab[data-active='true'] { color: var(--accent); border-bottom-color: var(--accent); font-weight: 500; }
+
+.topRow { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 10px; }
+.pageTitle { font-family: var(--font-display); font-size: 22px; color: var(--text-primary); margin-bottom: 4px; }
+.pageSub { font-size: 13px; color: var(--text-muted); max-width: 600px; }
+
+.newBtn { font-family: var(--font-body); font-size: 13px; font-weight: 500; padding: 9px 18px; background: var(--accent); border: none; border-radius: var(--radius); color: #fff; cursor: pointer; white-space: nowrap; }
+.backBtn { font-family: var(--font-body); font-size: 13px; padding: 9px 14px; background: transparent; border: 0.5px solid var(--border); border-radius: var(--radius); color: var(--text-muted); cursor: pointer; }
+
+.formCard { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
+
+/* Document preview header */
+.docPreviewHeader { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 1.25rem; margin-bottom: 1.25rem; border-bottom: 2px solid var(--accent); flex-wrap: wrap; gap: 12px; }
+.docPreviewLogo { display: flex; align-items: center; gap: 14px; }
+.logoPlaceholder { font-size: 20px; font-weight: 800; color: var(--accent); }
+.docCompanyInfo { display: flex; flex-direction: column; gap: 2px; }
+.docTypeLabel { font-size: 22px; font-weight: 700; color: var(--accent); letter-spacing: 0.05em; }
+
+.formRow { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+@media (max-width: 700px) { .formRow { grid-template-columns: 1fr; } }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.label { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+.input { background: var(--bg-input); border: 0.5px solid var(--border); border-radius: var(--radius); color: var(--text-primary); font-size: 13px; padding: 8px 10px; outline: none; font-family: var(--font-body); width: 100%; }
+.input:focus { border-color: var(--accent); }
+
+.linesSectionHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.sectionLabel { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+.addLineBtn { font-family: var(--font-body); font-size: 12px; padding: 5px 12px; background: var(--accent-dim); border: 0.5px solid var(--accent); border-radius: var(--radius); color: var(--accent); cursor: pointer; }
+
+.linesTable { display: flex; flex-direction: column; gap: 4px; overflow-x: auto; }
+.linesHeader { display: grid; grid-template-columns: 1.5fr 1.5fr 80px 60px 110px 90px 32px; gap: 8px; padding: 6px 10px; font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-muted); }
+.lineRow { display: grid; grid-template-columns: 1.5fr 1.5fr 80px 60px 110px 90px 32px; gap: 8px; align-items: center; background: var(--bg-input); border-radius: var(--radius); padding: 6px 10px; }
+.lineInput { background: var(--bg-surface); border: 0.5px solid var(--border); border-radius: 4px; color: var(--text-primary); font-size: 12px; padding: 5px 8px; outline: none; font-family: var(--font-body); width: 100%; }
+.lineInput:focus { border-color: var(--accent); }
+.lineTotal { font-size: 12px; font-weight: 500; color: var(--accent); text-align: right; }
+.lineDelBtn { background: transparent; border: none; color: var(--text-muted); cursor: pointer; font-size: 13px; }
+.lineDelBtn:hover { color: #c0392b; }
+
+.totalsBlock { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; margin-top: 12px; padding-top: 12px; border-top: 0.5px solid var(--border); }
+.totalRow { display: flex; justify-content: space-between; gap: 32px; font-size: 12px; color: var(--text-secondary); min-width: 220px; }
+.totalRowBig { display: flex; justify-content: space-between; gap: 32px; font-size: 16px; font-weight: 600; color: var(--text-primary); min-width: 220px; padding-top: 8px; border-top: 0.5px solid var(--border); margin-top: 4px; }
+
+.formActions { display: flex; gap: 8px; }
+.saveBtn { font-family: var(--font-body); font-size: 13px; font-weight: 500; padding: 10px 24px; background: var(--accent); border: none; border-radius: var(--radius); color: #fff; cursor: pointer; }
+.saveBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+.validateBtn { font-family: var(--font-body); font-size: 13px; font-weight: 500; padding: 10px 24px; background: #27ae60; border: none; border-radius: var(--radius); color: #fff; cursor: pointer; }
+.validateBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+.cancelBtn { font-family: var(--font-body); font-size: 13px; padding: 10px 16px; background: transparent; border: 0.5px solid var(--border); border-radius: var(--radius); color: var(--text-muted); cursor: pointer; }
